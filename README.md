@@ -9,7 +9,7 @@
 ### 開発環境の立ち上げ
 
 1. リポジトリを clone する
-1. `npm install``
+1. `npm install`
 1. `npm run initialize`
 1. `npm run db:migrate`
 1. `npm run db:seed`

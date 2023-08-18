@@ -9,7 +9,8 @@
     "initialize": "touch .database.sqlite",
     "db:migrate": "sequelize-cli db:migrate --env development",
     "db:migrate:clear": "sequelize-cli db:migrate:undo:all --env development",
-    "db:seed": "sequelize-cli db:seed:all --env development"
+    "db:seed": "sequelize-cli db:seed:all --env development",
+    "db:seed:clear": "sequelize-cli db:seed:undo:all --env development"
   },
   "author": "",
   "license": "ISC",

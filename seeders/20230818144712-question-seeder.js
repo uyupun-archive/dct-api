@@ -21,6 +21,14 @@ module.exports = {
         question: 'なぜ夏休みの宿題を最終日まで放置してしまうのか？',
         createdAt: new Date(),
         updatedAt: new Date(),
+      }, {
+        question: '岸田政権はどこへ向かうのか?',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }, {
+        question: 'vimを使うべきか?それともemacsを使うべきか?',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
   ], {});
   },
