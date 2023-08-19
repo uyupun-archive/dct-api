@@ -38,6 +38,18 @@ module.exports = {
         answer: '放置したことがないのでわからない',
         createdAt: new Date(),
         updatedAt: new Date(),
+      }, {
+        id: 5,
+        questionId: 3,
+        answer: '増税増税増税増税',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }, {
+        id: 6,
+        questionId: 4,
+        answer: '普通にVSCodeでよくね?',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       }
     ], {});
   },
