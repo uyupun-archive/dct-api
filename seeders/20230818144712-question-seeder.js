@@ -14,18 +14,22 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Questions', [
       {
+        id: 1,
         question: '人はなぜ争うのか?',
         createdAt: new Date(),
         updatedAt: new Date(),
       }, {
+        id: 2,
         question: 'なぜ夏休みの宿題を最終日まで放置してしまうのか？',
         createdAt: new Date(),
         updatedAt: new Date(),
       }, {
+        id: 3,
         question: '岸田政権はどこへ向かうのか?',
         createdAt: new Date(),
         updatedAt: new Date(),
       }, {
+        id: 4,
         question: 'vimを使うべきか?それともemacsを使うべきか?',
         createdAt: new Date(),
         updatedAt: new Date(),

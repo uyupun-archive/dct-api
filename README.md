@@ -11,7 +11,10 @@
 1. リポジトリを clone する
 1. `npm install`
 1. `npm run initialize`
+1. `package.json` の `"type": "module",` を一時的に消す
+  - migration, seeder がESでないので `type: module` が残っていると実行できない
 1. `npm run db:migrate`
 1. `npm run db:seed`
+1. 上で消した package.json の記述を復元する
 1. `npm run dev`
 
