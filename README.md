@@ -13,11 +13,26 @@
 1. `npm install -g nodemon`
 1. `npm run initialize`
 1. `package.json` の `"type": "module",` を一時的に消す
-  - migration, seeder がESでないので `type: module` が残っていると実行できない
+    - migration, seeder がESでないので `type: module` が残っていると実行できない
 1. `npm run db:migrate`
 1. `npm run db:seed`
 1. 上で消した package.json の記述を復元する
 1. `npm run dev`
+
+### ローカルサーバーをhttps化する
+
+- mkcert と http-proxy を使って3001 -> 3000ポートへのリバースプロキシを設定している
+- 以下の手順に従って証明書をインストールしてサーバーを立ち上げます
+
+1. ローカル環境に `mkcert` をインストールしてください
+    - 例として brew を使っている場合は `brew install mkcert`
+1. `mkcert -install`
+1. サーバー本体を立ち上げたターミナルとは別のターミナルを開いてください
+1. `cd proxy && mkcert 0.0.0.0`
+1. proxy ディレクトリに `0.0.0.0-key.pem` , `0.0.0.0.pem` が作成されていることを確認
+1. proxy ディレクトリ内で `npm run dev`
+
+※ SSL証明書が無効となっている可能性があるので、必要に応じて許可してください
 
 ### サンプルリクエスト
 
