@@ -1,9 +1,12 @@
 import express from'express';
+import cors from 'cors';
 
 import { getQuestion, createAnswer, cunningAnswer } from './src/useCases/index.js';
 
 const app = express()
 const port = 3000
+
+app.use(cors());
 app.use(express.json());
 
 app.get('/question', async (_, res) => {
