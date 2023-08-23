@@ -29,20 +29,21 @@ npm run db:seed
 $ npm run dev
 ```
 
-### ローカルサーバーをhttps化する
+### ローカルサーバーをHTTPS化する
 
-- mkcert と http-proxy を使って3001 -> 3000ポートへのリバースプロキシを設定している
-- 以下の手順に従って証明書をインストールしてサーバーを立ち上げます
+```bash
+$ brew install ngrok
+```
 
-1. ローカル環境に `mkcert` をインストールしてください
-    - 例として brew を使っている場合は `brew install mkcert`
-1. `mkcert -install`
-1. サーバー本体を立ち上げたターミナルとは別のターミナルを開いてください
-1. `cd proxy && mkcert 0.0.0.0`
-1. proxy ディレクトリに `0.0.0.0-key.pem` , `0.0.0.0.pem` が作成されていることを確認
-1. proxy ディレクトリ内で `npm run dev`
+- https://dashboard.ngrok.com/login にアクセスしてログインする
 
-※ SSL証明書が無効となっている可能性があるので、必要に応じて許可してください
+```bash
+$ ngrok config add-authtoken <your authtoken>
+$ ngrok http 3000
+$ open https://xxxx.ngrok-free.app
+# ngrokのダッシュボードの確認
+$ open http://127.0.0.1:4040
+```
 
 ### サンプルリクエスト
 
