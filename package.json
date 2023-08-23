@@ -7,11 +7,12 @@
   "scripts": {
     "dev": "nodemon index.js --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "initialize": "touch .database.sqlite",
+    "db:create": "touch database.sqlite",
+    "db:drop": "rm -rf database.sqlite",
     "db:migrate": "sequelize-esm db:migrate --env development",
     "db:migrate:clear": "sequelize-esm db:migrate:undo:all --env development",
-    "db:seed": "sequelize-cli db:seed:all --env development",
-    "db:seed:clear": "sequelize-cli db:seed:undo:all --env development"
+    "db:seed": "sequelize-esm db:seed:all --env development",
+    "db:seed:clear": "sequelize-esm db:seed:undo:all --env development"
   },
   "author": "",
   "license": "ISC",
