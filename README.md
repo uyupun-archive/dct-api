@@ -1,22 +1,22 @@
 # Don't cunning! Think.
 
-## Getting started
+## 環境構築
 
 ### 事前準備
 
-1. node v18.17.1 を有効にします
+1. Node.jsのv18.17.1をインストールします
+1. 本リポジトリをクローンします
 
 ### 開発環境の立ち上げ
 
 1. リポジトリを clone する
 1. `npm install`
-1. `npm install -g nodemon`
-1. `npm run initialize`
+1. `npm run db:create`
 1. `package.json` の `"type": "module",` を一時的に消す
-    - migration, seeder がESでないので `type: module` が残っていると実行できない
+  - これはマイグレーションとシーダーがESMではなく、CommonJSのため
 1. `npm run db:migrate`
 1. `npm run db:seed`
-1. 上で消した package.json の記述を復元する
+1. `package.json` の変更を元に戻す
 1. `npm run dev`
 
 ### ローカルサーバーをhttps化する
