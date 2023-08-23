@@ -9,16 +9,25 @@
 
 ### 開発環境の立ち上げ
 
-1. リポジトリを clone する
-1. `cp .env.example .env`
-1. `npm install`
-1. `npm run db:create`
-1. `package.json` の `"type": "module",` を一時的に消す
+```bash
+$ cp .env.example .env
+$ npm install
+$ npm run db:create
+```
+
+- `package.json` の `"type": "module",` を一時的に消す
   - これはマイグレーションとシーダーがESMではなく、CommonJSのため
-1. `npm run db:migrate`
-1. `npm run db:seed`
-1. `package.json` の変更を元に戻す
-1. `npm run dev`
+
+```bash
+npm run db:migrate
+npm run db:seed
+```
+
+- `package.json` の変更を元に戻す
+
+```bash
+$ npm run dev
+```
 
 ### ローカルサーバーをhttps化する
 
