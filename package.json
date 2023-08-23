@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js --host 0.0.0.0",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:create": "touch database.sqlite",
     "db:drop": "rm -rf database.sqlite",
