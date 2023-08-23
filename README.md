@@ -10,6 +10,7 @@
 ### 開発環境の立ち上げ
 
 1. リポジトリを clone する
+1. `cp .env.example .env`
 1. `npm install`
 1. `npm run db:create`
 1. `package.json` の `"type": "module",` を一時的に消す
