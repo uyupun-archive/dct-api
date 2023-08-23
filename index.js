@@ -1,10 +1,14 @@
 import express from'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import { getQuestion, createAnswer, cunningAnswer } from './src/useCases/index.js';
 
+dotenv.config();
+
 const app = express()
-const port = 3000
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -24,6 +28,6 @@ app.post('/cunning', async(req, res) => {
   res.status(response.status).send(response.body);
 })
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, host, () => {
   console.log(`Example app listening on port ${port}`)
 });

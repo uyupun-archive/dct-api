@@ -1,22 +1,24 @@
 {
-  "name": "dcf-api",
+  "name": "dct-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Don't cunning! Think.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js --host 0.0.0.0",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "initialize": "touch .database.sqlite",
+    "db:create": "touch database.sqlite",
+    "db:drop": "rm -rf database.sqlite",
     "db:migrate": "sequelize-esm db:migrate --env development",
     "db:migrate:clear": "sequelize-esm db:migrate:undo:all --env development",
-    "db:seed": "sequelize-cli db:seed:all --env development",
-    "db:seed:clear": "sequelize-cli db:seed:undo:all --env development"
+    "db:seed": "sequelize-esm db:seed:all --env development",
+    "db:seed:clear": "sequelize-esm db:seed:undo:all --env development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "lodash": "^4.17.21",
     "sequelize": "^6.32.1",
@@ -24,6 +26,10 @@
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
+    "nodemon": "^3.0.1",
     "sequelize-cli-esm": "^5.0.6"
+  },
+  "engines": {
+    "node": "18.17.1"
   }
 }

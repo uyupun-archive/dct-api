@@ -1,5 +1,6 @@
 node_modules/*
-db-*.sqlite3
+database.sqlite
+.env
 
 proxy/node_modules/*
 proxy/*.pem

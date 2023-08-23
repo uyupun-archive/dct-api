@@ -1,45 +1,55 @@
 # Don't cunning! Think.
 
-## Getting started
+## 環境構築
 
 ### 事前準備
 
-1. node v18.17.1 を有効にします
+1. Node.jsのv18.17.1をインストールします
+1. 本リポジトリをクローンします
 
 ### 開発環境の立ち上げ
 
-1. リポジトリを clone する
-1. `npm install`
-1. `npm install -g nodemon`
-1. `npm run initialize`
-1. `package.json` の `"type": "module",` を一時的に消す
-    - migration, seeder がESでないので `type: module` が残っていると実行できない
-1. `npm run db:migrate`
-1. `npm run db:seed`
-1. 上で消した package.json の記述を復元する
-1. `npm run dev`
+```bash
+$ cp .env.example .env
+$ npm install
+$ npm run db:create
+```
 
-### ローカルサーバーをhttps化する
+- `package.json` の `"type": "module",` を一時的に消す
+  - これはマイグレーションとシーダーがESMではなく、CommonJSのため
 
-- mkcert と http-proxy を使って3001 -> 3000ポートへのリバースプロキシを設定している
-- 以下の手順に従って証明書をインストールしてサーバーを立ち上げます
+```bash
+npm run db:migrate
+npm run db:seed
+```
 
-1. ローカル環境に `mkcert` をインストールしてください
-    - 例として brew を使っている場合は `brew install mkcert`
-1. `mkcert -install`
-1. サーバー本体を立ち上げたターミナルとは別のターミナルを開いてください
-1. `cd proxy && mkcert 0.0.0.0`
-1. proxy ディレクトリに `0.0.0.0-key.pem` , `0.0.0.0.pem` が作成されていることを確認
-1. proxy ディレクトリ内で `npm run dev`
+- `package.json` の変更を元に戻す
 
-※ SSL証明書が無効となっている可能性があるので、必要に応じて許可してください
+```bash
+$ npm run dev
+```
+
+### ローカルサーバーをHTTPS化する
+
+```bash
+$ brew install ngrok
+```
+
+- https://dashboard.ngrok.com/login にアクセスしてログインする
+
+```bash
+$ ngrok config add-authtoken <your authtoken>
+$ ngrok http 3000
+$ open https://xxxx.ngrok-free.app
+# ngrokのダッシュボードの確認
+$ open http://127.0.0.1:4040
+```
 
 ### サンプルリクエスト
 
 - `GET /question` ランダムに問いを取得
     ```bash
-    curl --location 'localhost:3000/question' \
-    --data ''
+    curl --location 'localhost:3000/question'
     ```
     ```json
     {
