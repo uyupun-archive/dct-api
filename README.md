@@ -49,8 +49,7 @@ $ open http://127.0.0.1:4040
 
 - `GET /question` ランダムに問いを取得
     ```bash
-    curl --location 'localhost:3000/question' \
-    --data ''
+    curl --location 'localhost:3000/question'
     ```
     ```json
     {
