@@ -19,8 +19,8 @@ $ npm run db:create
   - これはマイグレーションとシーダーがESMではなく、CommonJSのため
 
 ```bash
-npm run db:migrate
-npm run db:seed
+$ npm run db:migrate
+$ npm run db:seed
 ```
 
 - `package.json` の変更を元に戻す
