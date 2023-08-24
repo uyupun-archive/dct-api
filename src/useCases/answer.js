@@ -1,5 +1,7 @@
-import db from '../../models/index.js';
 import _ from 'lodash';
+
+import db from '../../models/index.js';
+import sendToken from './sendToken.js';
 
 export async function createAnswer(request) {
   console.log(request);
@@ -10,7 +12,12 @@ export async function createAnswer(request) {
   }
 
   try {
-    // TODO: トークンの付与
+    // トークンの送金
+    // const recipientAddress = '0xAd4bb1548aF5205e8B9c749296Eebe36de33c90d';
+    const recipientAddress = request.wallet_address;
+    const stepCount = request.step_count;
+    const transferAmount = stepCount * 10 ** 18;
+    await sendToken(recipientAddress, transferAmount);
 
     // answer の保存
     await db.Answer.create({
