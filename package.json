@@ -23,7 +23,8 @@
     "lodash": "^4.17.21",
     "sequelize": "^6.32.1",
     "sequelize-cli": "^6.6.1",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "web3": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
