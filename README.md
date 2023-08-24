@@ -45,6 +45,14 @@ $ open https://xxxx.ngrok-free.app
 $ open http://127.0.0.1:4040
 ```
 
+### その他のコマンド
+
+```bash
+$ npm run db:drop
+$ npm run db:migrate:clear
+$ npm run db:seed:clear
+```
+
 ### サンプルリクエスト
 
 - `GET /question` ランダムに問いを取得
