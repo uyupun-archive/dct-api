@@ -71,7 +71,7 @@ function validCreateAnswerRequest(request) {
   if (!request.question_id || !Number.isInteger(request.question_id)) {
     return false;
   }
-  if (!request.step_count || !Number.isInteger(request.step_count)) {
+  if (!Number.isInteger(request.step_count)) {
     return false;
   }
   if (!request.wallet_address || request.wallet_address === '') {
