@@ -109,3 +109,8 @@ $ npm run db:seed:clear
         }
     }
     ```
+
+### IERC20.jsonについて
+
+- `IERC20.json` は [uyupun/dct-cng-token-issuer](https://github.com/uyupun/dct-cng-token-issuer) にてスマートコントラクトをコンパイルした際に生成されるファイルです
+- `artifacts/@openzeppelin/contracts/token/ERC20/IERC20.sol/IERC20.json` を本リポジトリにコピーしています
