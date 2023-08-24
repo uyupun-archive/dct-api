@@ -19,8 +19,9 @@ const tokenContract = new web3.eth.Contract(ierc20Abi, tokenContractAddress);
 
 // トランザクションの作成と送金
 export default async function sendToken(toAddress, amount) {
+  const amount_ = amount.toString();
   const gasPrice = await web3.eth.getGasPrice();
-  const transferMethod = tokenContract.methods.transfer(toAddress, amount);
+  const transferMethod = tokenContract.methods.transfer(toAddress, amount_);
 
   const transaction = {
     from: senderAccount.address,

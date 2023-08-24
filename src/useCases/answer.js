@@ -13,8 +13,10 @@ export async function createAnswer(request) {
 
   try {
     // トークンの送金
-    const recipientAddress = '0xAd4bb1548aF5205e8B9c749296Eebe36de33c90d';
-    const transferAmount = (100 * 10 ** 18).toString();
+    // const recipientAddress = '0xAd4bb1548aF5205e8B9c749296Eebe36de33c90d';
+    const recipientAddress = request.wallet_address;
+    const stepCount = request.step_count;
+    const transferAmount = stepCount * 10 ** 18;
     await sendToken(recipientAddress, transferAmount);
 
     // answer の保存
