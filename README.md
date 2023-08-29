@@ -1,5 +1,7 @@
 # Don't cunning! Think.
 
+<img width="200" alt="ロゴ" src="/logo.png">
+
 ## 環境構築
 
 ### 事前準備
